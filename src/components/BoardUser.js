@@ -17,10 +17,10 @@ const BoardUser = () => {
   }, []);
   useEffect(() => {
     EventBus.on("disconnect", (data) => {
-      setUserDC(true);
+      //setUserDC(true);
     });
     EventBus.on("connect", (data) => {
-      //setUserDC(false);
+      // setUserDC(false);
     });
 
     return () => {
