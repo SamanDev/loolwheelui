@@ -4,7 +4,7 @@ import EventBus from "./common/EventBus";
 
 const URL =
   process.env.NODE_ENV === "production"
-    ? "https://wserver.khodekhalse.com/wheel"
+    ? "https://wso.loole.money/wheel"
     : "http://localhost:2424/wheel";
 const url = window.location.href.toString().split("/");
 

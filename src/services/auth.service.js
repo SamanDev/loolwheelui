@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL =
   process.env.NODE_ENV === "production"
-    ? "https://api.khodekhalse.com/api/auth/"
+    ? "https://ws.loole.money/api/auth/"
     : "http://localhost:2525/api/auth/";
 
 const register = (username, email, password, image, refer) => {

@@ -3,7 +3,7 @@ import authHeader from "./auth-header";
 
 const API_URL =
   process.env.NODE_ENV === "production"
-    ? "https://api.khodekhalse.com/lastlist"
+    ? "https://ws.loole.money/lastlist"
     : "http://api.khodekhalse.com/lastlist";
 
 const getPublicContent = (data) => {
