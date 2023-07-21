@@ -190,7 +190,7 @@ export const GetToken = () => {
 };
 export function formatDollar(num) {
   try {
-    var p = num.toFixed(2).split(".");
+    var p = num.toFixed(0).split(".");
     if (p[1] == "00") {
       return (
         "" +
@@ -209,9 +209,7 @@ export function formatDollar(num) {
           .reverse()
           .reduce(function (acc, num, i, orig) {
             return num + (num != "-" && i && !(i % 3) ? "," : "") + acc;
-          }, "") +
-        "." +
-        p[1]
+          }, "")
       );
     }
   } catch (error) {}
