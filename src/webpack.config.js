@@ -12,7 +12,7 @@ module.exports = {
       },
     },
     headers: {
-      "X-Frame-Options": "allow-from *",
+      "X-Frame-Options": "SAMEORIGIN",
       "Access-Control-Allow-Origin": "*",
     },
   },
