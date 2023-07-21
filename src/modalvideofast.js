@@ -45,7 +45,7 @@ function ModalExampleModal(prop) {
           width="360"
           height="800"
           type="adsense"
-          data-ad-client="ca-pub-3130483322710260"
+          data-ad-client="ca-pub-7264153250850834"
           data-ad-slot="5227020060"
         ></amp-ad>
       </Segment>
