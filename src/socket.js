@@ -4,8 +4,8 @@ import EventBus from "./common/EventBus";
 
 const URL =
   process.env.NODE_ENV === "production"
-    ? "https://wso.loole.money/wheel"
-    : "http://localhost:2424/wheel";
+    ? "https://ws.loole.money/wheel"
+    : "https://ws.loole.money/wheel";
 const url = window.location.href.toString().split("/");
 
 export const socket = io(URL, {

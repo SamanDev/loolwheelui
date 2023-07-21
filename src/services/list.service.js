@@ -3,8 +3,8 @@ import authHeader from "./auth-header";
 
 const API_URL =
   process.env.NODE_ENV === "production"
-    ? "https://ws.loole.money/lastlist"
-    : "http://api.khodekhalse.com/lastlist";
+    ? "https://wso.loole.money/lastlist"
+    : "https://wso.loole.money/lastlist";
 
 const getPublicContent = (data) => {
   return axios.get(API_URL + "?l=" + data.command);
