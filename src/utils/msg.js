@@ -3,8 +3,8 @@ import { Comment, Image } from "semantic-ui-react";
 
 const CommentExampleMetadata = (prop) => (
   <Comment.Group size="mini">
-    <Comment>
-      <Comment.Avatar as={Image} circular src={prop.image} />
+    <Comment size="mini">
+      <Comment.Avatar src={prop.image} />
       <Comment.Content>
         <Comment.Author>{prop.username}</Comment.Author>
 

@@ -47,7 +47,7 @@ const getDelts = (item, betx, tit, num) => {
           stringToHslColor(item?.username, 80, 30) +
           "&color=" +
           stringToHslColor(item?.username, 100, 100) +
-          "&bold=true&rounded=true&size=100&name=" +
+          "&bold=true&rounded=true&size=2&name=" +
           item?.username
         }
         centered

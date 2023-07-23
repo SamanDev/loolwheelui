@@ -11,9 +11,5 @@ module.exports = {
         username: "webpack",
       },
     },
-    headers: {
-      "X-Frame-Options": "SAMEORIGIN",
-      "Access-Control-Allow-Origin": "*",
-    },
   },
 };

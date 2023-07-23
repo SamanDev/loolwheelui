@@ -60,7 +60,7 @@ function BetsWheel(prop) {
             stringToHslColor(user?.username, 80, 30) +
             "&color=" +
             stringToHslColor(user?.username, 100, 100) +
-            "&rounded=true&size=40&bold=true&name=" +
+            "&rounded=true&size=2&bold=true&name=" +
             user?.username
           }
           style={{ height: 25, padding: "0 10px" }}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventBus from "../common/EventBus";
 import Comment from "../utils/msg";
-
+import { stringToHslColor } from "../utils/include";
 function ChatWheel(prop) {
   const [userbets, setuserbets] = useState([]);
 
@@ -41,7 +41,15 @@ function ChatWheel(prop) {
           <Comment
             key={i}
             username={cmd.username}
-            image={cmd.image}
+            s
+            image={
+              "https://ui-avatars.com/api/?format=svg&background=" +
+              stringToHslColor(cmd?.username, 80, 30) +
+              "&color=" +
+              stringToHslColor(cmd?.username, 100, 100) +
+              "&bold=true&rounded=true&size=2&name=" +
+              cmd?.username
+            }
             txt={cmd.txt}
           />
         );

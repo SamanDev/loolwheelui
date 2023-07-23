@@ -22,7 +22,7 @@ const addChat = (txt) => {
 };
 
 const SendChatWheel = () => (
-  <Comment.Group size="mini">
+  <Comment.Group size="mini" style={{ width: "100%" }}>
     <Comment>
       <Form
         onSubmit={() => {

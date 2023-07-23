@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "semantic-ui-react";
 import BetsWheel from "./bets";
+import ChatWheel from "./chat";
+import SendChatWheel from "./sendchat";
 
 import ChipsWheel from "./chips";
 const GridExampleDividedPhrase = (prop) => {
@@ -13,15 +15,19 @@ const GridExampleDividedPhrase = (prop) => {
   }, [bet]);
   return (
     <>
-      <Grid columns="two">
+      <Grid columns="three">
         <Grid.Row style={{ margin: 0 }}>
           <Grid.Column>
             <BetsWheel bet={bet} setBet={setBet} />
+          </Grid.Column>
+          <Grid.Column>
+            <ChatWheel />
           </Grid.Column>
 
           <Grid.Column>
             <ChipsWheel bet={bet} setBet={setBet} />
           </Grid.Column>
+          <SendChatWheel />
         </Grid.Row>
       </Grid>
     </>
