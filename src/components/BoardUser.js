@@ -17,7 +17,7 @@ const BoardUser = () => {
   }, []);
   useEffect(() => {
     EventBus.on("disconnect", (data) => {
-      //setUserDC(true);
+      setUserDC(true);
     });
     EventBus.on("connect", (data) => {
       // setUserDC(false);
@@ -37,7 +37,7 @@ const BoardUser = () => {
         <br />
         <Button
           onClick={() => {
-            //window.location.reload();
+            window.location.reload();
           }}
           color="orange"
         >
