@@ -148,7 +148,6 @@ function ModalExampleModal(prop) {
       <ModalAds
         open={openads}
         getchips={getchips}
-        id={user.id}
         setOpenads={setOpenads}
         setOpen={setOpen}
       />
