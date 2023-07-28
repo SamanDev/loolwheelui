@@ -12,10 +12,18 @@ import EventBus from "../common/EventBus";
 import ModalAds from "../modalvideo";
 import { Jetton, formatDollar } from "../utils/include";
 
-const getchips = (id) => {
-  UserService.getchips(id).then((response) => {
-    EventBus.dispatch("setuser", response.data);
-  });
+const getchips = (user, setOpen) => {
+  if (user?.balance2 < 100) {
+    UserService.getchips().then((response) => {
+      try {
+        if (user?.username == response.data.username) {
+          EventBus.dispatch("setuser", response.data);
+        }
+      } catch (error) {}
+    });
+  }
+
+  //setOpen(false);
 };
 const olduser2 = JSON.parse(localStorage.getItem("user"));
 function ModalExampleModal(prop) {
@@ -76,43 +84,66 @@ function ModalExampleModal(prop) {
       onClose={() => {
         setOpen(false);
       }}
-      onOpen={() => setOpen(true)}
+      onOpen={() => {
+        setOpenads(false);
+        setOpen(true);
+      }}
       open={open}
       size="mini"
       basic
       closeOnDimmerClick={true}
       closeIcon={true}
       trigger={
-        <Icon circular inverted name="gift" color="red" id="showadsmod" />
+        <Icon
+          circular
+          inverted
+          name="gift"
+          color="red"
+          id="showadsmod"
+          style={{ position: "absolute", zIndex: -1 }}
+        />
       }
     >
-      <Segment inverted size="mini" style={{ textAlign: "center" }}>
-        <h3 className="text-center">Free chips</h3>
+      <Segment inverted style={{ textAlign: "center" }}>
+        <h3 className="text-center">Free Diamond</h3>
         <Divider />
-        You can watch ads and get 1,000{" "}
-        <span style={{ position: "relative", top: -1 }}>
-          <Jetton />
-        </span>{" "}
-        for free, if your balance is less than 1,000.
+        <p>
+          {" "}
+          You can watch ads and get 100{" "}
+          <span style={{ position: "relative", top: -1 }}>
+            <Jetton />
+          </span>{" "}
+          for free, if your balance is less than 100.
+        </p>
+
         <Divider />
-        <div
-          style={user?.balance2 >= 1000 ? { color: "red" } : { color: "green" }}
+        <p
+          style={user?.balance2 >= 100 ? { color: "red" } : { color: "green" }}
         >
           Your balance is {formatDollar(user?.balance2)}{" "}
           <span style={{ position: "relative", top: -1 }}>
             <Jetton />
           </span>
           <br /> <br />
-        </div>
+        </p>
         <Button
           color="facebook"
-          disabled={user?.balance2 >= 1000}
+          disabled={user?.balance2 >= 100}
           onClick={() => {
             setOpenads(true);
           }}
         >
           <Icon name="video" /> Watch Ads
         </Button>
+        <Icon
+          circular
+          inverted
+          name="gift"
+          color="red"
+          id="showadsmodget"
+          style={{ position: "absolute", zIndex: -1 }}
+          onClick={() => getchips(user, setOpen)}
+        />
       </Segment>
       <ModalAds
         open={openads}

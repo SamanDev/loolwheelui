@@ -60,10 +60,6 @@ function ModalExampleModal(prop) {
   }, [user, open]);
 
   useEffect(() => {
-    setLoading(false);
-    setOpen(false);
-  }, [user?.tokens.length]);
-  useEffect(() => {
     if (wheel?.status == "Done") {
       const olduser = JSON.parse(localStorage.getItem("user"));
 
@@ -109,45 +105,6 @@ function ModalExampleModal(prop) {
       trigger={<Icon name="user plus" color="blue" circular inverted />}
     >
       <Segment inverted size="mini" style={{ textAlign: "center" }}>
-        {user?.tokens.length > 0 && (
-          <>
-            <h3 className="text-center">Use Your Tokens</h3>
-            <Divider />
-            You have {user.tokens.length} tokens to use. each token will give
-            you 5,000
-            <span style={{ position: "relative", top: -1 }}>
-              <Jetton />
-            </span>
-            , if your balance is less than 5,000.
-            <br /> <br />
-            <div
-              style={
-                user?.balance2 >= 5000 ? { color: "red" } : { color: "green" }
-              }
-            >
-              Your balance is {formatDollar(user?.balance2)}
-              <span style={{ position: "relative", top: -1 }}>
-                <Jetton />
-              </span>
-              <br /> <br />
-            </div>
-            <Button
-              color="teal"
-              onClick={() => {
-                gettokens(user.tokens[0]);
-                setLoading(true);
-              }}
-              loading={loading}
-              disabled={loading || user?.balance2 >= 5000}
-            >
-              <Icon name="free code camp" />
-              Use Token
-            </Button>
-            <Divider horizontal inverted>
-              Or
-            </Divider>
-          </>
-        )}
         <h3 className="text-center">Invite friends</h3>
         <Divider />
         Invite friends via your invite link and get 5,000{" "}

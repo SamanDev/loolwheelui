@@ -198,7 +198,11 @@ td b {
 
   overflow: hidden;
 }
-
+.ui.fullscreen.modal > .close {
+  top: 1.0535rem;
+  right: 1rem;
+  color: #fff;
+}
 .info p {
   margin: 0 !important;
   font-size: 12px !important;
@@ -334,7 +338,9 @@ tr .ui,
 .modal {
   left: auto !important;
 }
-
+.modals {
+  z-index: 100000 !important;
+}
 .bhdLno {
   margin: auto;
   background-color: #22303f;

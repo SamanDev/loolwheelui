@@ -6,7 +6,9 @@ import {
   formatDollar,
   stringToHslColor,
 } from "../utils/include";
-
+import Mod from "./modalinv";
+import Modads from "./modalads";
+import { Icon } from "semantic-ui-react";
 function BetsWheel(prop) {
   const oldduser = JSON.parse(localStorage.getItem("user"));
   const [user, setUser] = useState(oldduser);
@@ -53,6 +55,7 @@ function BetsWheel(prop) {
   }
   return (
     <>
+      <Modads wheel={prop.wheel} />
       <div className="info">
         <img
           src={

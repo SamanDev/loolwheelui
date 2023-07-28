@@ -224,10 +224,12 @@ function BetsWheel(prop) {
         }
       } else {
         window.parent.postMessage("openusdbank", "*");
+        $("#showadsmod").trigger("click");
       }
     } else {
       if (balance < _b) {
         window.parent.postMessage("openusdbank", "*");
+        $("#showadsmod").trigger("click");
       }
     }
   };

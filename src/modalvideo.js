@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal, Icon, Progress, Segment } from "semantic-ui-react";
-
+import AdsComponent from "./adscom";
+import $ from "jquery";
 function ModalExampleModal(prop) {
   const [per, setPer] = useState(0);
   useEffect(() => {
     if (prop.open) {
       var pers = setInterval(() => {
-        setPer((prev) => prev + 20);
-      }, 1000);
+        setPer((prev) => prev + 1);
+      }, 100);
     } else {
       setPer(0);
     }
@@ -17,8 +18,8 @@ function ModalExampleModal(prop) {
     };
   }, [prop.open]);
   useEffect(() => {
-    if (per == 100) {
-      prop.getchips(prop.id);
+    if (per == 90) {
+      $("#showadsmodget").trigger("click");
     }
   }, [per]);
   return (
@@ -27,32 +28,14 @@ function ModalExampleModal(prop) {
       basic
       size="fullscreen"
       closeOnDimmerClick={false}
-      closeIcon={per >= 110 ? true : false}
+      closeIcon={per > 90 ? true : false}
       onClose={() => {
         prop.setOpenads(false);
-        prop.setOpen(false);
       }}
     >
       <Progress percent={per} active color="green" attached="top" />
-      <Segment inverted size="small" style={{ margin: 0 }}>
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-          }}
-        >
-          <img src="/assets/sepi.png" style={{ margin: "auto" }} />
-        </div>
-        <amp-ad
-          layout="fixed"
-          width="360"
-          height="800"
-          type="adsense"
-          data-ad-client="ca-pub-7264153250850834"
-          data-ad-slot="5227020060"
-        ></amp-ad>
+      <Segment inverted size="small" style={{ margin: 0, height: "90vh" }}>
+        <AdsComponent dataAdSlot="7427191858" />
       </Segment>
     </Modal>
   );
