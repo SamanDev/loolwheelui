@@ -7,18 +7,13 @@ const AdsComponent = (props) => {
     try {
       setTimeout(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-        setShow(true);
       }, 500);
     } catch (e) {
-      //setShow(false);
-      setTimeout(() => {
-        try {
+      try {
+        setTimeout(() => {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
-          setShow(true);
-        } catch (e) {
-          setShow(false);
-        }
-      }, 1500);
+        }, 500);
+      } catch (e) {}
     }
   }, []);
 
