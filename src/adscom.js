@@ -5,10 +5,14 @@ const AdsComponent = (props) => {
 
   useEffect(() => {
     try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
       setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (error) {}
       }, 500);
-    } catch (e) {}
+    }
   }, []);
 
   return (
