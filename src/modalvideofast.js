@@ -1,53 +1,57 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal, Icon, Progress, Segment } from "semantic-ui-react";
-
+import AdsComponent from "./adscom";
+import $ from "jquery";
 function ModalExampleModal(prop) {
+  const [open, setOpen] = useState(false);
   const [per, setPer] = useState(0);
   useEffect(() => {
-    if (prop.open) {
+    if (open) {
       var pers = setInterval(() => {
-        setPer((prev) => prev + 20);
-      }, 500);
+        setPer((prev) => prev + 10);
+      }, 100);
     } else {
       setPer(0);
+      clearInterval(pers);
     }
 
     return () => {
+      setPer(0);
       clearInterval(pers);
     };
-  }, [prop.open]);
+  }, [open]);
 
   return (
     <Modal
-      open={prop.open}
+      open={open}
       basic
       size="fullscreen"
       closeOnDimmerClick={false}
-      closeIcon={per >= 110 ? true : false}
-      onClose={() => {
-        prop.setOpen(false);
+      closeIcon={per > 60 ? true : false}
+      onOpen={() => {
+        setOpen(true);
       }}
+      onClose={() => {
+        setOpen(false);
+      }}
+      trigger={
+        <Icon
+          circular
+          inverted
+          name="gift"
+          color="red"
+          id="playButton"
+          style={{ position: "absolute", zIndex: -1 }}
+        />
+      }
     >
       <Progress percent={per} active color="green" attached="top" />
-      <Segment inverted size="small" style={{ margin: 0 }}>
-        <div
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-          }}
-        >
-          <img src="/assets/sepi.png" style={{ margin: "auto" }} />
-        </div>
-        <amp-ad
-          layout="fixed"
-          width="360"
-          height="800"
-          type="adsense"
-          data-ad-client="ca-pub-7264153250850834"
-          data-ad-slot="5227020060"
-        ></amp-ad>
+      <Segment
+        inverted
+        size="small"
+        style={{ margin: 0, minHeight: "60vh", textAlign: "center" }}
+      >
+        <AdsComponent dataAdSlot="7427191858" />
       </Segment>
     </Modal>
   );

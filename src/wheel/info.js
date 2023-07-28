@@ -8,6 +8,8 @@ import {
 } from "../utils/include";
 import Mod from "./modalinv";
 import Modads from "./modalads";
+
+import Modadsfast from "../modalvideofast";
 import { Icon } from "semantic-ui-react";
 function BetsWheel(prop) {
   const oldduser = JSON.parse(localStorage.getItem("user"));
@@ -56,6 +58,7 @@ function BetsWheel(prop) {
   return (
     <>
       <Modads wheel={prop.wheel} />
+      <Modadsfast wheel={prop.wheel} />
       <div className="info">
         <img
           src={
