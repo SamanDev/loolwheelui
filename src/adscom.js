@@ -5,10 +5,12 @@ const AdsComponent = (props) => {
   const [show, setShow] = useState(true);
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      setShow(true);
+      setTimeout(() => {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        setShow(true);
+      }, 500);
     } catch (e) {
-      // setShow(false);
+      //setShow(false);
       setTimeout(() => {
         try {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -16,19 +18,10 @@ const AdsComponent = (props) => {
         } catch (e) {
           setShow(false);
         }
-      }, 500);
+      }, 1500);
     }
   }, []);
-  if (!show) {
-    return (
-      <ins
-        className="adsbygoogle"
-        style={{ display: "none", width: 300, height: 600 }}
-        data-ad-client="ca-pub-7264153250850834"
-        data-ad-slot={dataAdSlot}
-      ></ins>
-    );
-  }
+
   return (
     <>
       <ins
