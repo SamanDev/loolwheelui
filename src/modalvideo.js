@@ -34,7 +34,11 @@ function ModalExampleModal(prop) {
       }}
     >
       <Progress percent={per} active color="green" attached="top" />
-      <Segment inverted size="small" style={{ margin: 0, height: "90vh" }}>
+      <Segment
+        inverted
+        size="small"
+        style={{ margin: 0, minHeight: "60vh", textAlign: "center" }}
+      >
         <AdsComponent dataAdSlot="7427191858" />
       </Segment>
     </Modal>
