@@ -75,78 +75,82 @@ function ModalExampleModal(prop) {
   }, []);
 
   return (
-    <Modal
-      onClose={() => {
-        setOpen(false);
-      }}
-      onOpen={() => {
-        setOpenads(false);
-        setOpen(true);
-      }}
-      open={open}
-      size="mini"
-      basic
-      closeOnDimmerClick={true}
-      closeIcon={true}
-      trigger={
-        <Icon
-          circular
-          inverted
-          name="gift"
-          color="red"
-          id="showadsmod"
-          style={{ position: "absolute", zIndex: -1 }}
-        />
-      }
-    >
-      <Segment inverted style={{ textAlign: "center" }}>
-        <h3 className="text-center">Free Diamond</h3>
-        <Divider />
-        <p>
-          {" "}
-          You can watch ads and get 100{" "}
-          <span style={{ position: "relative", top: -1 }}>
-            <Jetton />
-          </span>{" "}
-          for free, if your balance is less than 100.
-        </p>
+    <>
+      <Modal
+        onClose={() => {
+          setOpen(false);
+        }}
+        onOpen={() => {
+          setOpenads(false);
+          setOpen(true);
+        }}
+        open={open}
+        size="mini"
+        basic
+        closeOnDimmerClick={true}
+        closeIcon={true}
+        trigger={
+          <Icon
+            circular
+            inverted
+            name="gift"
+            color="red"
+            id="showadsmod"
+            style={{ position: "absolute", zIndex: -1 }}
+          />
+        }
+      >
+        <Segment inverted style={{ textAlign: "center" }}>
+          <h3 className="text-center">Free Diamond</h3>
+          <Divider />
+          <p>
+            {" "}
+            You can watch ads and get 100{" "}
+            <span style={{ position: "relative", top: -1 }}>
+              <Jetton />
+            </span>{" "}
+            for free, if your balance is less than 100.
+          </p>
 
-        <Divider />
-        <p
-          style={user?.balance2 >= 100 ? { color: "red" } : { color: "green" }}
-        >
-          Your balance is {formatDollar(user?.balance2)}{" "}
-          <span style={{ position: "relative", top: -1 }}>
-            <Jetton />
-          </span>
-          <br /> <br />
-        </p>
-        <Button
-          color="facebook"
-          disabled={user?.balance2 >= 100}
-          onClick={() => {
-            setOpenads(true);
-          }}
-        >
-          <Icon name="video" /> Watch Ads
-        </Button>
-        <Icon
-          circular
-          inverted
-          name="gift"
-          color="red"
-          id="showadsmodget"
-          style={{ position: "absolute", zIndex: -1 }}
-          onClick={() => getchips(user, setOpen)}
-        />
-      </Segment>
+          <Divider />
+          <p
+            style={
+              user?.balance2 >= 100 ? { color: "red" } : { color: "green" }
+            }
+          >
+            Your balance is {formatDollar(user?.balance2)}{" "}
+            <span style={{ position: "relative", top: -1 }}>
+              <Jetton />
+            </span>
+            <br /> <br />
+          </p>
+          <Button
+            color="facebook"
+            disabled={user?.balance2 >= 100}
+            onClick={() => {
+              setOpenads(true);
+            }}
+          >
+            <Icon name="video" /> Watch Ads
+          </Button>
+          <Icon
+            circular
+            inverted
+            name="gift"
+            color="red"
+            id="showadsmodget"
+            style={{ position: "absolute", zIndex: -1 }}
+            onClick={() => getchips(user, setOpen)}
+          />
+        </Segment>
+      </Modal>
       <ModalAds
         open={openads}
         getchips={getchips}
         setOpenads={setOpenads}
         setOpen={setOpen}
       />
-    </Modal>
+    </>
   );
 }
 

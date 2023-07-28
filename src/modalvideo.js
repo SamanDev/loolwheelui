@@ -18,7 +18,7 @@ function ModalExampleModal(prop) {
     };
   }, [prop.open]);
   useEffect(() => {
-    if (per == 90) {
+    if (per == 95) {
       $("#showadsmodget").trigger("click");
     }
   }, [per]);
