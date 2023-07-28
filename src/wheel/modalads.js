@@ -23,7 +23,7 @@ const getchips = (user, setOpen) => {
     });
   }
 
-  //setOpen(false);
+  setOpen(false);
 };
 const olduser2 = JSON.parse(localStorage.getItem("user"));
 function ModalExampleModal(prop) {
@@ -41,12 +41,7 @@ function ModalExampleModal(prop) {
       }, 2000);
     }
   }, [copied]);
-  useEffect(() => {
-    var _link = window.location.href
-      .toString()
-      .replace("/play", "/invite/" + user.id);
-    setLink(_link);
-  }, [user]);
+
   useEffect(() => {
     if (wheel?.status == "Done") {
       const olduser = JSON.parse(localStorage.getItem("user"));
