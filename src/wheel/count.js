@@ -82,8 +82,6 @@ function CountWheel(prop) {
       if (wheel?.status == "Done") {
         if (
           segments[wheel?.number] == 0 ||
-          segments[wheel?.number] == 2 ||
-          segments[wheel?.number] == 4 ||
           segments[wheel?.number] == 20 ||
           segments[wheel?.number] == 25
         ) {
