@@ -19,16 +19,7 @@ const AdsComponent = (props) => {
       }, 500);
     }
   }, []);
-  if (!show) {
-    return (
-      <ins
-        className="adsbygoogle"
-        style={{ display: "none", width: 300, height: 600 }}
-        data-ad-client="ca-pub-7264153250850834"
-        data-ad-slot={dataAdSlot}
-      ></ins>
-    );
-  }
+
   return (
     <>
       <ins
