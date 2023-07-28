@@ -16,7 +16,7 @@ const AdsComponent = (props) => {
         } catch (e) {
           setShow(false);
         }
-      }, 100);
+      }, 500);
     }
   }, []);
   if (!show) {
