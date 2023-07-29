@@ -4,17 +4,19 @@ const AdsComponent = (props) => {
   const { dataAdSlot } = props;
   const [show, setShow] = useState(true);
   useEffect(() => {
-    try {
-      setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }, 500);
-    } catch (e) {
+    setTimeout(() => {
       try {
-        setTimeout(() => {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        //setShow(true);
+      } catch (e) {
+        //setShow(false);
+
+        try {
           (window.adsbygoogle = window.adsbygoogle || []).push({});
-        }, 500);
-      } catch (e) {}
-    }
+          //setShow(true);
+        } catch (e) {}
+      }
+    }, 500);
   }, []);
 
   return (

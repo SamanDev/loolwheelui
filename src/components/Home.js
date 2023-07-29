@@ -2,7 +2,7 @@ import React from "react";
 
 import "../home.css";
 import Google from "../google";
-import AdsComponent from "../adsComponent";
+
 import List from "./List";
 import Menu from "./menu";
 
@@ -31,14 +31,6 @@ const Home = () => {
             winning big in "Wheel of Persia"!
           </p>
 
-          <Google />
-          <div>
-            <AdsComponent dataAdSlot="6044212052" />
-          </div>
-          <List />
-          <div>
-            <AdsComponent dataAdSlot="6044212052" />
-          </div>
           <Menu />
         </div>
       </div>

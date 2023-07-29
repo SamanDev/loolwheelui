@@ -10,10 +10,12 @@ function ModalExampleModal(prop) {
         setPer((prev) => prev + 1);
       }, 100);
     } else {
+      clearInterval(pers);
       setPer(0);
     }
 
     return () => {
+      setPer(0);
       clearInterval(pers);
     };
   }, [prop.open]);
