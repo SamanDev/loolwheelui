@@ -7,7 +7,7 @@ export default function authHeader() {
     // return { Authorization: "Bearer " + user.accessToken };
 
     // for Node.js Express back-end
-    return { Authorization: "LooLe " + accessToken };
+    return { Authorization: "LooLe  " + accessToken };
   } else {
     return {};
   }
