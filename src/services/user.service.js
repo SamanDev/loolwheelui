@@ -13,7 +13,7 @@ const getUserBoard = () => {
   return axios.get(API_URL + "api/user", { headers: authHeader() });
 };
 const getchips = (id) => {
-  return axios.get(API_URL + "getchip?id=" + id, {
+  return axios.post("https://loole.money/api/req/addPointToUser", {
     headers: authHeader(),
   });
 };
