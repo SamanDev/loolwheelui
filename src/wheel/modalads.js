@@ -17,7 +17,13 @@ const getchips = (user, setOpen) => {
     UserService.getchips().then((response) => {
       try {
         if (user?.username == response.data.username) {
-          EventBus.dispatch("setuser", response.data);
+          var newu = {
+            username: response.data?.username,
+            balance: response.data?.balance,
+            balance2: response.data?.point,
+            image: 0,
+          };
+          EventBus.dispatch("setuser", newu);
         }
       } catch (error) {}
     });

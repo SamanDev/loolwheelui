@@ -19,10 +19,16 @@ function BetsWheel(prop) {
   useEffect(() => {
     window.addEventListener("message", function (event) {
       if (event?.data?.username) {
-        localStorage.setItem("user", JSON.stringify(event?.data));
+        var newu = {
+          username: event?.data?.username,
+          balance: event?.data?.balance,
+          balance2: event?.data?.point,
+          image: 0,
+        };
+        localStorage.setItem("user", JSON.stringify(newu));
 
-        EventBus.dispatch("user", event.data);
-        EventBus.dispatch("balance", event.data.balance2);
+        EventBus.dispatch("user", newu);
+        EventBus.dispatch("balance", newu.balance2);
       }
     });
     EventBus.on("user", (data) => {
