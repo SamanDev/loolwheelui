@@ -3,7 +3,7 @@ import { Grid } from "semantic-ui-react";
 import BetsWheel from "./bets";
 import ChatWheel from "./chat";
 import SendChatWheel from "./sendchat";
-
+import DiscordBtn from "../utils/discordbtn";
 import ChipsWheel from "./chips";
 const GridExampleDividedPhrase = (prop) => {
   const [bet, setBet] = useState(
@@ -23,10 +23,10 @@ const GridExampleDividedPhrase = (prop) => {
           <Grid.Column>
             <ChatWheel />
           </Grid.Column>
-
           <Grid.Column>
             <ChipsWheel bet={bet} setBet={setBet} />
-          </Grid.Column>
+          </Grid.Column>{" "}
+          <DiscordBtn />
           <SendChatWheel />
         </Grid.Row>
       </Grid>
