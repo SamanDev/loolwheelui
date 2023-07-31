@@ -6,7 +6,7 @@ const DiscordBtn = () => (
     fluid
     color="purple"
     as="a"
-    href="https://discord.gg/qcZHw9JZ"
+    href="https://discord.gg/ytUZxGbhnp"
     target="_blank"
   >
     <Icon name="discord" size="big" />
