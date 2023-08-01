@@ -5,10 +5,14 @@ import { AdScript, AdConfig } from "react-ad-manager";
 const AdsComponent = (props) => {
   return (
     <>
-      <AdConfig networkCode={1} target={[["global", "true"]]} />
+      <AdConfig
+        networkCode={1}
+        collapseEmptyDivs={true}
+        target={[["global", "true"]]}
+      />
       <Ad
         adUnit="/22964122449/reward"
-        name="div-gpt-ad-1690857849617-0"
+        name="div-gpt-ad-1690861617422-0"
         size={[
           [
             [1024, 768],
@@ -19,8 +23,6 @@ const AdsComponent = (props) => {
           ],
           [[640, 480], [[300, 250]]],
         ]}
-        refreshTimer={5000}
-        type="INTERSTITIAL"
       />
     </>
   );

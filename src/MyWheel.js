@@ -6,8 +6,8 @@ import AdsComponent from "./adscom";
 function MNyWheel() {
   return (
     <>
-      <AdsComponent dataAdSlot="7427191858" />
       <InfoWheel />
+      <AdsComponent dataAdSlot="7427191858" />
       <div className="cadr">
         <ShowWheel />
 
