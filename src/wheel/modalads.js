@@ -132,7 +132,7 @@ function ModalExampleModal(prop) {
           </p>
           <Button
             color="facebook"
-            disabled={user?.balance2 >= 100}
+            disabled={user?.balance2 >= 1000}
             onClick={() => {
               setOpenads(true);
             }}
