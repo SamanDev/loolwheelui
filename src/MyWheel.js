@@ -7,11 +7,12 @@ function MNyWheel() {
   return (
     <>
       <InfoWheel />
-      <AdsComponent dataAdSlot="7427191858" />
+
       <div className="cadr">
         <ShowWheel />
 
         <BottomWheel />
+        <AdsComponent dataAdSlot="1405467157" />
       </div>
     </>
   );

@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { Ad } from "react-ad-manager";
-import { AdScript, AdConfig } from "react-ad-manager";
-
+var reef;
 const AdsComponent = (props) => {
+  const { dataAdSlot } = props;
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    reef = setTimeout(() => {
+      if (typeof window !== "undefined")
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }, 500);
+    return () => {
+      clearTimeout(reef);
+    };
+  }, []);
+
   return (
-    <>
-      <AdConfig
-        networkCode={1}
-        collapseEmptyDivs={true}
-        target={[["global", "true"]]}
-      />
-      <Ad
-        adUnit="/22964122449/reward"
-        name="div-gpt-ad-1690861617422-0"
-        size={[
-          [
-            [1024, 768],
-            [
-              [750, 200],
-              [728, 90],
-            ],
-          ],
-          [[640, 480], [[300, 250]]],
-        ]}
-      />
-    </>
+    <div style={{ textAlign: "center" }}>
+      <ins
+        className="adsbygoogle"
+        style={{
+          display: "inline-block",
+          width: 728,
+          height: 90,
+        }}
+        data-ad-client="ca-pub-7264153250850834"
+        data-ad-slot={dataAdSlot}
+      ></ins>
+    </div>
   );
 };
 

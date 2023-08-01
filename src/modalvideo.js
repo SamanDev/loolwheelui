@@ -40,7 +40,9 @@ function ModalExampleModal(prop) {
         inverted
         size="small"
         style={{ margin: 0, minHeight: "60vh", textAlign: "center" }}
-      ></Segment>
+      >
+        <AdsComponent dataAdSlot="1405467157" />
+      </Segment>
     </Modal>
   );
 }

@@ -51,7 +51,7 @@ function ModalExampleModal(prop) {
         size="small"
         style={{ margin: 0, minHeight: "60vh", textAlign: "center" }}
       >
-        <AdsComponent dataAdSlot="7427191858" />
+        <AdsComponent dataAdSlot="1405467157" />
       </Segment>
     </Modal>
   );
