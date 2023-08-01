@@ -85,7 +85,7 @@ function CountWheel(prop) {
           segments[wheel?.number] == 20 ||
           segments[wheel?.number] == 25
         ) {
-          $("#playButton").trigger("click");
+          window.parent.postMessage("openusdfast", "*");
         }
       }
     }

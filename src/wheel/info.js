@@ -57,8 +57,6 @@ function BetsWheel(prop) {
   }
   return (
     <>
-      <Modads wheel={prop.wheel} />
-      <Modadsfast wheel={prop.wheel} />
       <div className="info">
         <img
           src={
