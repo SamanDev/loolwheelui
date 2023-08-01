@@ -7,17 +7,14 @@ const AdsComponent = (props) => {
     <>
       <Ad
         adUnit="/22964122449/reward"
-        name="div-gpt-ad-1690853053465-0"
-        size={[
-          [
-            [1024, 768],
-            [
-              [750, 200],
-              [728, 90],
-            ],
-          ],
-          [[640, 480], [[300, 250]]],
-        ]}
+        name="div-gpt-ad-1690857849617-0"
+        size={["fluid"]}
+        eventImpressionViewable={(e) => console.log(e.slot)}
+        eventSlotOnload={(e) => console.log(e.slot)}
+        eventSlotRenderEnded={(e) => console.log(e.slot)}
+        eventSlotRequested={(e) => console.log(e.slot)}
+        eventSlotResponseReceived={(e) => console.log(e.slot)}
+        eventSlotVisibilityChanged={(e) => console.log(e.slot)}
       />
     </>
   );
